@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopHarsha | Online Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="bootstrap.js" defer></script>
+  <style>
+    /* Lightweight page-specific tweaks that rely on CSS variables in style.css */
+    .container { max-width:1100px; margin:20px auto; padding:0 16px; box-sizing:border-box; }
+    .hero { background:#fffaf0; padding:30px 16px; border-radius:8px; margin-bottom:16px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.04); }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:18px; }
+    .card { background:#fff; padding:14px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.04); text-align:left; }
+    .card img { width:100%; height:160px; object-fit:cover; border-radius:6px; background:#fff7e6; }
+    .search-wrap { display:flex; gap:8px; align-items:center; justify-content:center; margin-top:12px; }
+    .search-input { width:100%; max-width:640px; padding:10px 14px; border-radius:8px; border:1px solid #e2e6ea; box-sizing:border-box; font-size:14px; }
+    #page-error { color: #c33; text-align:center; margin-top:12px; display:none; }
+  </style>
+</head>
+<body>
+  <header class="navbar" role="banner">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <h1 style="margin:0;font-size:20px">ShopHarsha</h1>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a id="cart-link" href="cart.html">Cart(<span id="cart-count">0</span>)</a>
+        <a href="orders.html">Orders</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="latest-heading">
+      <h2 id="latest-heading" style="margin:0 0 6px">Latest Products</h2>
+      <p style="margin:0;color:var(--muted)">Shop the latest items from our store.</p>
+
+      <div class="search-wrap" style="flex-direction:column;">
+        <div style="width:100%;display:flex;justify-content:center">
+          <input id="search-input" class="search-input" type="search" placeholder="Search products by name or id" aria-label="Search products" />
+        </div>
+      </div>
+    </section>
+
+    <section aria-live="polite" aria-labelledby="products-heading">
+      <h3 id="products-heading" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Products</h3>
+      <div id="products" class="grid" role="region" aria-label="Product list">
+        <!-- products rendered here by script.js -->
+      </div>
+      <div id="no-products" style="display:none; text-align:center; padding:32px; color:var(--muted)">No products found.</div>
+      <div id="page-error" role="alert"></div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">© 2025 ShopHarsha</footer>
+
+  <!-- Cart count & storage handling -->
+  <script>
+    (function () {
+      function computeCountFromCart() {
+        try {
+          const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+          return Object.values(cart).reduce((s, q) => s + (Number(q) || 0), 0);
+        } catch (e) {
+          return Number(localStorage.getItem('cartCount') || 0) || 0;
+        }
+      }
+      function setCartCount(n) {
+        const els = document.querySelectorAll('#cart-count');
+        els.forEach(el => { el.textContent = String(n || 0); });
+      }
+      window.updateCartCount = function () {
+        const n = computeCountFromCart();
+        localStorage.setItem('cartCount', n);
+        setCartCount(n);
+      };
+      document.addEventListener('DOMContentLoaded', () => { try { window.updateCartCount(); } catch (e) { const pe = document.getElementById('page-error'); if (pe) { pe.style.display = 'block'; pe.textContent = 'Page script error: ' + (e && e.message ? e.message : e); } console.error(e); } });
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'cart' || e.key === 'cartCount') window.updateCartCount();
+      });
+    })();
+  </script>
+
+  <!-- application script: load after HTML to avoid missing elements -->
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 49999,
+    "image": "https://via.placeholder.com/200?text=Laptop"
+  },
+  {
+    "id": 2,
+    "name": "Mobile",
+    "price": 20000,
+    "image": "https://via.placeholder.com/200?text=Mobile"
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "price": 2500,
+    "image": "https://via.placeholder.com/200?text=Headphones"
+  },
+  {
+    "id": 4,
+    "name": "Smartwatch",
+    "price": 7500,
+    "image": "https://via.placeholder.com/200?text=Smartwatch"
+  },
+  {
+    "id": 5,
+    "name": "Tablet",
+    "price": 22000,
+    "image": "https://via.placeholder.com/200?text=Tablet"
+  },
+  {
+    "id": 6,
+    "name": "Camera",
+    "price": 35000,
+    "image": "https://via.placeholder.com/200?text=Camera"
+  },
+  {
+    "id": 7,
+    "name": "Keyboard",
+    "price": 1199,
+    "image": "https://via.placeholder.com/200?text=Keyboard"
+  },
+  {
+    "id": 8,
+    "name": "Mouse",
+    "price": 599,
+    "image": "https://via.placeholder.com/200?text=Mouse"
+  },
+  {
+    "id": 9,
+    "name": "Monitor",
+    "price": 12000,
+    "image": "https://via.placeholder.com/200?text=Monitor"
+  },
+  {
+    "id": 10,
+    "name": "Speaker",
+    "price": 1800,
+    "image": "https://via.placeholder.com/200?text=Speaker"
+  },
+  {
+    "id": 11,
+    "name": "Cables",
+    "price": 500,
+    "image": "https://via.placeholder.com/200?text=Cables"
+  },
+  {
+    "id": 12,
+    "name": "Smart Lamp",
+    "price": 9999,
+    "image": "https://via.placeholder.com/200?text=Smart%20Lamp"
+  },
+  {
+    "id": 13,
+    "name": "Study table",
+    "price": 599,
+    "image": "https://via.placeholder.com/200?text=Study%20table"
+  },
+  {
+    "id": 14,
+    "name": "HeadSet",
+    "price": 9999,
+    "image": "https://share.google/xU5p7fge8GODrglY4"
+  },
+  {
+    "id": 15,
+    "name": "Iphone",
+    "price": 49999,
+    "image": "https://via.placeholder.com/200?text=Iphone"
+  },
+  {
+    "id": 16,
+    "name": "Egg Boiler",
+    "price": 249,
+    "image": "https://via.placeholder.com/300?text=Egg%20Boiler"
+  },
+  {
+    "id": 17,
+    "name": "Kettle",
+    "price": 400,
+    "image": "https://via.placeholder.com/300?text=Kettle"
+  },
+  {
+    "id": 18,
+    "name": "Samsung galaxy mobile",
+    "price": 19999,
+    "image": "https://via.placeholder.com/300?text=Samsung%20galaxy%20mobile"
+  }
+]
